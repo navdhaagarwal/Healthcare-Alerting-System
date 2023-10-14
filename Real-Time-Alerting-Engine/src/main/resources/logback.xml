@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>
+                %green(%d{IS08601}) %highlight(%-5level) [%blue(%logger)] %yellow(%C{1.}): %msg%n%throwable
+            </Pattern>
+        </encoder>
+    </appender>
+
+
+    <property name="LOGS" value="logs" />
+    <appender name="Debug_file" class="ch.qos.logback.core.FileAppender">
+        <file>${LOGS}/spring-logger.log</file>
+        <encoder>
+            <Pattern>
+                %green(%d{IS08601}) %highlight(%-5level) [%blue(%logger)] %yellow(%C{1.}): %msg%n%throwable
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="Console"/>
+        <appender-ref ref="Debug_file"/>
+    </root>
+
+</configuration>
