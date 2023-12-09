@@ -25,4 +25,21 @@ public class VitalDTO {
 
     @JsonProperty("vital_value")
     private Double vitalValue;
+
+    @JsonProperty("key")
+    private String key;
+
+    public void calculateKey() {
+        this.key = String.format("patient_id=%s#vital_name=%s", this.patientId, this.vitalName);
+    }
+
+    @Override
+    public String toString() {
+        return "(" +
+                "time='" + time + '\'' +
+                ", patientId='" + patientId + '\'' +
+                ", vitalName='" + vitalName + '\'' +
+                ", vitalValue=" + vitalValue +
+                ')';
+    }
 }

@@ -16,5 +16,7 @@ public class AppConfig {
     private String kafkaGroupId;
     private String kafkaOffset;
     private String vitalKafkaTopic;
+    private String alertDefinitionKafkaTopic;
+    private String alertProducerKafkaTopic;
 
 }
