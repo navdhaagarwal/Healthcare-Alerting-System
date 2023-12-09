@@ -25,7 +25,7 @@
 - Navigate to the project's root: `cd <repository-path>`
 - Create a virtual environment: `python3 -m venv venv`
 - Activate the environment: `source venv/bin/activate`
-- Install all the dependencies: `pip3 install -r requirements.txt`
+- Install all the dependencies if there are any: `pip3 install -r requirements.txt`
 - Navigate to the Predictive-Alerting-Engine directory `cd Predictive-Alerting-Engine/`
 - Make the changes.
 - To deactivate the environment: `deactivate`
@@ -50,15 +50,17 @@
 ## Directory and File Structure
 
     .
-    ├── dataset/                                     # Dataset
+    ├── dataset/                                     # Results of predictive models used as a dataset in Real-Time Alerting Engine
+        ├── results/                                 
+        └── combined_data_with_survival.csv          # The original dataset created
+    ├── Dataset Generation/                          # Python scripts for creating and extrapolating the dataset
     ├── docker/                                      # Docker configuration
     ├── docs/                                        # Documentation
     ├── Predictive-Alerting-Engine/                  # Machine-Leaning Based System
-        ├── notebooks/
-        ├── scripts/
-        └── requirements.txt
+        ├── notebooks/                               # Contains all the machine learning model's notebooks
+        └── results/                                 # Comprehensive results obtained by machine learning models for all patients
     ├── Real-Time-Alerting-Engine/                   # Real-Time Alerting Application
-        ├── src/
+        ├── src/main/java/alerting                   # Source code for Real-Time Alerting Engine
         └── pom.xml
     ├── .gitignore                                  
     ├── readme.md
